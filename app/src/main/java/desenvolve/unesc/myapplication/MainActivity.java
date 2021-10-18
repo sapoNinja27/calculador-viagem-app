@@ -25,50 +25,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lista = findViewById(R.id.list);
-
-        edtFiltro = findViewById(R.id.edtFiltro);
-
-        btnNovoFilme = findViewById(R.id.btnNovoFilme);
-        btnNovoFilme.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
-            }
-        });
-
-        btnLimparFilmes = findViewById(R.id.btnLimparFilmes);
-        btnLimparFilmes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new FilmeDAO(MainActivity.this).DeleteAll();
-                popularFilmes();
-            }
-        });
-
-        btnFiltrar = findViewById(R.id.btnFiltrar);
-        btnFiltrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (!edtFiltro.getText().toString().isEmpty()) {
-                    lista.setAdapter(new FilmeAdptar(MainActivity.this, new FilmeDAO(MainActivity.this).Select(edtFiltro.getText().toString())));
-                }
-                else {
-                    popularFilmes();
-                }
-            }
-        });
-
-        popularFilmes();
-    }
-
-    private void popularFilmes() {
-        lista.setAdapter(new FilmeAdptar(MainActivity.this, new FilmeDAO(this).Select()));
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        popularFilmes();
+//        lista = findViewById(R.id.list);
+//
+//        edtFiltro = findViewById(R.id.edtFiltro);
+//
+//        btnNovoFilme = findViewById(R.id.btnNovoFilme);
+//        btnNovoFilme.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+//            }
+//        });
+//
+//        btnLimparFilmes = findViewById(R.id.btnLimparFilmes);
+//        btnLimparFilmes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                new FilmeDAO(MainActivity.this).DeleteAll();
+//                popularFilmes();
+//            }
+//        });
+//
+//        btnFiltrar = findViewById(R.id.btnFiltrar);
+//        btnFiltrar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!edtFiltro.getText().toString().isEmpty()) {
+//                    lista.setAdapter(new FilmeAdptar(MainActivity.this, new FilmeDAO(MainActivity.this).Select(edtFiltro.getText().toString())));
+//                }
+//                else {
+//                    popularFilmes();
+//                }
+//            }
+//        });
+//
+//        popularFilmes();
+//    }
+//
+//    private void popularFilmes() {
+//        lista.setAdapter(new FilmeAdptar(MainActivity.this, new FilmeDAO(this).Select()));
+//    }
+//
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        popularFilmes();
     }
 }

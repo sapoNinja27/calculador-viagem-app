@@ -35,18 +35,18 @@ public class LoginActivity extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
 
         // Faz o UPDATE do usuário.
-        btnAtualizar = findViewById(R.id.btnAtualizar);
-        btnAtualizar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (dao.Update(edtUsuario.getText().toString(), edtSenha.getText().toString()) > 0) {
-                    Toast.makeText(LoginActivity.this, "Usuário Atualizado!", Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(LoginActivity.this, "Falha na atualização!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+//        btnAtualizar = findViewById(R.id.btnAtualizar);
+//        btnAtualizar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (dao.Update(edtUsuario.getText().toString(), edtSenha.getText().toString()) > 0) {
+//                    Toast.makeText(LoginActivity.this, "Usuário Atualizado!", Toast.LENGTH_LONG).show();
+//                }
+//                else {
+//                    Toast.makeText(LoginActivity.this, "Falha na atualização!", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
         // Faz o SELECT e entra no aplicativo.
         btnEntrar = findViewById(R.id.btnEntrar);
@@ -59,39 +59,39 @@ public class LoginActivity extends AppCompatActivity {
                     System.out.println("************************ >>>>>>>>>>>>> "+usuario.getUsuario());
                 }*/
 
-                UsuarioModel model = dao.Select(edtUsuario.getText().toString(), edtSenha.getText().toString());
-                if (model != null) {
-                    Toast.makeText(LoginActivity.this, "Usuário Entrado!", Toast.LENGTH_LONG).show();
+//                UsuarioModel model = dao.Select(edtUsuario.getText().toString(), edtSenha.getText().toString());
+//                if (model != null) {
+//                    Toast.makeText(LoginActivity.this, "Usuário Entrado!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                }
-                else {
-                    Toast.makeText(LoginActivity.this, "Usuário Não Encontrado!", Toast.LENGTH_LONG).show();
-                }
+//                }
+//                else {
+//                    Toast.makeText(LoginActivity.this, "Usuário Não Encontrado!", Toast.LENGTH_LONG).show();
+//                }
             }
         });
 
         // Grava um novo usário.
-        btnGravar = findViewById(R.id.btnGravar);
-        btnGravar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        btnGravar = findViewById(R.id.btnGravar);
+//        btnGravar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                UsuarioModel model = new UsuarioModel();
+//                model.setUsuario(edtUsuario.getText().toString());
+//                model.setSenha(edtSenha.getText().toString());
+//
+//                if (dao.Insert(model) != -1) {
+//                    Toast.makeText(LoginActivity.this, "Usuário Inserido!", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
 
-                UsuarioModel model = new UsuarioModel();
-                model.setUsuario(edtUsuario.getText().toString());
-                model.setSenha(edtSenha.getText().toString());
-
-                if (dao.Insert(model) != -1) {
-                    Toast.makeText(LoginActivity.this, "Usuário Inserido!", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        btnDeletar = findViewById(R.id.btnDeletar);
-        btnDeletar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dao.Delete(edtUsuario.getText().toString());
-            }
-        });
+//        btnDeletar = findViewById(R.id.btnDeletar);
+//        btnDeletar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dao.Delete(edtUsuario.getText().toString());
+//            }
+//        });
     }
 }

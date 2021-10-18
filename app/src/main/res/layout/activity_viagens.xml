@@ -7,19 +7,14 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnNviagem"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="NOVA VIAGEM"
-        android:backgroundTint="#0047FB"
-        android:layout_marginTop="10dp"/>
-    <Button
-        android:id="@+id/btnViagem"
+        android:weightSum="2"/>
+
+    <ListView
+        android:id="@+id/list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="VIAGENS"
-        android:backgroundTint="#0047FB"
-        android:layout_marginTop="10dp"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

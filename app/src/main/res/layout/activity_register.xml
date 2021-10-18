@@ -3,20 +3,37 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E2F5F8"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Cadastrar:"
+        android:textAlignment="center"
+        android:textColor="#0047FB"
+        android:textSize="50sp"></TextView>
     <EditText
         android:id="@+id/edtNome"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:hint="Nome do Filme"
-        android:padding="10dp"/>
+        android:hint="Nome"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Senha"
+        android:padding="10dp"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnSalvar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SALVAR"
+        android:backgroundTint="#0047FB"
         android:layout_marginTop="10dp"/>
 
 </LinearLayout>
