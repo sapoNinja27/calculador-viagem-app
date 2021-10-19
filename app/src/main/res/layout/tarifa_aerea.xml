@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2F5F8"
+    android:orientation="vertical">
+
+<!--    gasolina-->
+
+    <!--tarifa aerea-->
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Tarifa aérea"
+        android:textAlignment="center"
+        android:textColor="#0047FB"
+        android:textSize="50sp"></TextView>
+
+    <EditText
+        android:id="@+id/custoEpessoa"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Custo estimado por pessoa"
+        android:padding="10dp" />
+
+    <EditText
+        android:id="@+id/aluguelaVeiculo"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Aluguel de veiculo"
+        android:padding="10dp" />
+
+    <!--    refeições -->
+
+    <!--    hospedagem -->
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Total:"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="20sp"></TextView>
+
+    <Button
+        android:id="@+id/btnSalvar9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#0047FB"
+        android:text="ADICIONAR A VIAGEM?" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="Nota: informações vazias serão excluidas do calculo"
+        android:textAlignment="center"
+        android:textColor="#ED0101"
+        android:textSize="20sp"></TextView>
+
+
+    <!--    Entreterimento/diversos -->
+
+
+</LinearLayout>

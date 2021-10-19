@@ -1,5 +1,8 @@
 package desenvolve.unesc.myapplication.database.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UsuarioModel {
 
     public static final String
@@ -29,8 +32,12 @@ public class UsuarioModel {
     ===========================================================*/
 
     private long id;
+
     private String usuario;
+
     private String senha;
+
+    private List<Viagem> viagens = new ArrayList<>();
 
     public long getId() {
         return id;
