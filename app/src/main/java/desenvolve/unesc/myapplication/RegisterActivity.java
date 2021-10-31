@@ -15,7 +15,7 @@ import desenvolve.unesc.myapplication.database.model.Usuario;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText edtUsuario;
+    private EditText edtNome;
     private EditText edtSenha;
     private Button btnSalvar;
 
@@ -23,22 +23,22 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-        edtUsuario = findViewById(R.id.edtUsuario);
-        edtSenha = findViewById(R.id.edtSenha);
         btnSalvar = findViewById(R.id.btnSalvar);
+
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!edtUsuario.getText().toString().isEmpty() && !edtSenha.getText().toString().isEmpty()) {
 
-                    Usuario model = new Usuario(edtUsuario.getText().toString(), edtSenha.getText().toString());
+                edtNome = findViewById(R.id.edtNome);
+                edtSenha = findViewById(R.id.edtSenha);
+
+                if (!edtNome.getText().toString().isEmpty() && !edtSenha.getText().toString().isEmpty()) {
+
+                    Usuario model = new Usuario(edtNome.getText().toString(), edtSenha.getText().toString());
 
                     new UsuarioService(RegisterActivity.this).Insert(model);
 
-                    Toast.makeText(RegisterActivity.this, "CadastroRealizado", Toast.LENGTH_SHORT).show();
-
-                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                    startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
                 }
             }
         });

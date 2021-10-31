@@ -24,9 +24,9 @@ public class Refeicao {
 
     private Long id;
 
-    private long custoEstimadoRefeicao;
+    private long custoEstimadoRefeicao = 1;
 
-    private long refeicoesDia;
+    private long refeicoesDia = 1;
 
     public Long getId() {
         return id;
@@ -52,7 +52,7 @@ public class Refeicao {
         this.refeicoesDia = refeicoesDia;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return custoEstimadoRefeicao * refeicoesDia;
     }
 }

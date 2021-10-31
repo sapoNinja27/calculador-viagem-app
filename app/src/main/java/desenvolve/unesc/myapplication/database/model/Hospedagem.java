@@ -27,11 +27,11 @@ public class Hospedagem {
 
     private Long id;
 
-    private long custoNoite;
+    private long custoNoite = 1;
 
-    private long totalNoites;
+    private long totalNoites = 1;
 
-    private long totalQuartos;
+    private long totalQuartos = 1;
 
     public Long getId() {
         return id;
@@ -65,7 +65,7 @@ public class Hospedagem {
         this.totalQuartos = totalQuartos;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return custoNoite
                 * totalNoites
                 * totalQuartos;

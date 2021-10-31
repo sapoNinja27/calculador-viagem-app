@@ -24,6 +24,12 @@
 
         <activity android:name=".MainActivity"/>
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".GasolinaActivity"/>
+        <activity android:name=".EntreterimentoActivity"/>
+        <activity android:name=".RefeicaoActivity"/>
+        <activity android:name=".TarifaAereaActivity"/>
+        <activity android:name=".HospedagemActivity"/>
+        <activity android:name=".ViagensActivity"/>
 
     </application>
 

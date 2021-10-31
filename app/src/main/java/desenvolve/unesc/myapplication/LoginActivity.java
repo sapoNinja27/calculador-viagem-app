@@ -20,6 +20,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtUsuario, edtSenha;
     private Button btnEntrar, btnCadastrar;
     private UsuarioService usuarioService;
+    public static Usuario usuario;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,9 +37,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Usuario usuario = usuarioService.Find(edtUsuario.getText().toString(), edtSenha.getText().toString());
+                usuario = usuarioService.Find(edtUsuario.getText().toString(), edtSenha.getText().toString());
                 if (Objects.nonNull(usuario)) {
-                    Toast.makeText(LoginActivity.this, "Usuário Encontrado!", Toast.LENGTH_LONG).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                 }
                 else {

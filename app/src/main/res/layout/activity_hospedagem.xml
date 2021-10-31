@@ -1,31 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#E2F5F8"
+android:orientation="vertical">
+
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E2F5F8"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-
-<!--    gasolina-->
-
-    <!--tarifa aerea-->
-
-    <!--    refeições -->
-
-    <!--    hospedagem -->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:text="Hospedagem:"
+        android:text="Hospedagem"
         android:textAlignment="center"
         android:textColor="#0047FB"
-        android:textSize="50sp"></TextView>
+        android:textSize="50sp"/>
 
     <EditText
         android:id="@+id/custoHospedagem"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:inputType="number"
         android:hint="Custo médio(por noite)
 "
         android:padding="10dp" />
@@ -34,25 +30,27 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Total de noites"
+        android:inputType="number"
         android:padding="10dp" />
     <EditText
         android:id="@+id/totalQuartos"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:hint="Total de quartos"
+        android:inputType="number"
         android:padding="10dp" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/total"
         android:layout_width="match_parent"
         android:layout_height="65dp"
         android:text="Total:"
         android:textAlignment="textStart"
         android:textColor="#000000"
-        android:textSize="20sp"></TextView>
+        android:textSize="20sp"/>
 
     <Button
-        android:id="@+id/btnSalvar9"
+        android:id="@+id/adc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -60,16 +58,12 @@
         android:text="ADICIONAR A VIAGEM?" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/alert"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:text="Nota: informações vazias serão excluidas do calculo"
         android:textAlignment="center"
         android:textColor="#ED0101"
-        android:textSize="20sp"></TextView>
-
-
-    <!--    Entreterimento/diversos -->
-
+        android:textSize="20sp"/>
 
 </LinearLayout>
+</ScrollView>

@@ -90,7 +90,7 @@ public class UsuarioService extends AbstractService {
 
             Cursor cursor = db.query
                     (
-                            Usuario.USUARIO,
+                            Usuario.TABELA,
                             colunas,
                             Usuario.USUARIO + " = ? and "+Usuario.SENHA+" = ?",
                             new String[]{nome, senha},
@@ -115,7 +115,11 @@ public class UsuarioService extends AbstractService {
         model.setId(cursor.getLong(0));
         model.setUsuario(cursor.getString(1));
         model.setSenha(cursor.getString(2));
-        model.setViagens(viagemService.Select(model.getId()));
+        try{
+            model.setViagens(viagemService.Select(model.getId()));
+        }catch(Exception e){
+            //caso for o 1 login o sistema vai crashar quando for buscar as viagens
+        }
         return model;
     }
 

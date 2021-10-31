@@ -64,7 +64,7 @@ public class Entreterimento {
         this.emprevistos = emprevistos;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return vilaEncantada + zooPomerode + emprevistos;
     }
 }

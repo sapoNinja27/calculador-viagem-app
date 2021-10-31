@@ -23,10 +23,19 @@
         <entry key="..\:/Programacao/Projetos-Mobile/BancoExemplo/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Programacao/Projetos-Mobile/BancoExemplo/app/src/main/res/layout/activity_register.xml" value="0.4" />
         <entry key="..\:/Programacao/Projetos-Mobile/BancoExemplo/app/src/main/res/layout/list_row.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_entreterimento.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_gasolina.xml" value="0.33125" />
+        <entry key="app/src/main/res/layout/activity_hospedagem.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.24230072463768115" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_refeicoes.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/activity_tarifa_aerea.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/activity_viagens.xml" value="0.1859375" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

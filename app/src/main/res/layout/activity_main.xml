@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
     <EditText
-        android:id="@+id/edtUsuario"
+        android:id="@+id/edtDestino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -20,7 +20,7 @@
         android:backgroundTint="#0047FB"
         android:layout_marginTop="10dp"/>
     <Button
-        android:id="@+id/btnViagem"
+        android:id="@+id/btnViagens"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="VIAGENS"

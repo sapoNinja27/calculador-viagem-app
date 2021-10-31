@@ -28,13 +28,13 @@ public class Gasolina {
 
     private Long id;
 
-    private long totalEstimadoQuilometros;
+    private long totalEstimadoQuilometros = 1;
 
-    private long mediaQuilometrosLitro;
+    private long mediaQuilometrosLitro = 1;
 
-    private long custoMedioLitro;
+    private long custoMedioLitro = 1;
 
-    private long totalVeiculos;
+    private long totalVeiculos = 1;
 
     public Long getId() {
         return id;
@@ -76,7 +76,7 @@ public class Gasolina {
         this.totalVeiculos = totalVeiculos;
     }
 
-    public long getTotal() {
+    public Long getTotal() {
         return totalEstimadoQuilometros
                 * mediaQuilometrosLitro
                 * custoMedioLitro
