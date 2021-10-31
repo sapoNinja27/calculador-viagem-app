@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import desenvolve.unesc.myapplication.database.dao.UsuarioService;
 import desenvolve.unesc.myapplication.database.model.Usuario;
 
-public class RegisterActivity extends AppCompatActivity {
+public class ViagemActivity extends AppCompatActivity {
 
     private EditText edtUsuario;
     private EditText edtSenha;
@@ -34,11 +34,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                     Usuario model = new Usuario(edtUsuario.getText().toString(), edtSenha.getText().toString());
 
-                    new UsuarioService(RegisterActivity.this).Insert(model);
+                    new UsuarioService(ViagemActivity.this).Insert(model);
 
-                    Toast.makeText(RegisterActivity.this, "CadastroRealizado", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViagemActivity.this, "CadastroRealizado", Toast.LENGTH_SHORT).show();
 
-                    startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                    startActivity(new Intent(ViagemActivity.this, MainActivity.class));
                 }
             }
         });

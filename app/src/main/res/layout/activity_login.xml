@@ -38,7 +38,7 @@
             android:text="ENTRAR" />
 
         <Button
-            android:id="@+id/btnGravar"
+            android:id="@+id/btnCadastrar"
             android:layout_width="match_parent"
             android:backgroundTint="#0047FB"
             android:layout_height="wrap_content"

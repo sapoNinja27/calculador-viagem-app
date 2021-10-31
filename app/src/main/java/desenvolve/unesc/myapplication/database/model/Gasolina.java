@@ -3,41 +3,30 @@ package desenvolve.unesc.myapplication.database.model;
 public class Gasolina {
 
     public static final String
-            TABELA_VIAGEM = "tb_vuagens";
+            TABELA = "tb_gasolina";
 
     public static final String
             ID = "_id",
-            DESTINO = "destino",
-            GASOLINA = "gasolina",
-            TARIFA_AEREA = "tarifa",
-            REFEICAO = "refeicao",
-            HOSPEDAGEM = "hospedagem",
-            ENTRETERIMENTO = "entreterimento";
+            TOTAL_ESTIMADO_QUILOMETROS = "totalEstimadoQuilometros",
+            MEDIA_QUILOMETROS = "mediaQuilometrosLitro",
+            CUSTO_MEDIO_LITRO = "custoMedioLitro",
+            TOTAL_VEICULOS = "totalVeiculos";
 
     public static final String
             CREATE_TABLE =
-            "create table "+TABELA_VIAGEM
-                    +"("
-                    +   ID + " integer primary key autoincrement, "
-                    +   DESTINO + " text not null "
-                    +   GASOLINA + "integer"
-                    +   TARIFA_AEREA + "integer"
-                    +   REFEICAO + "integer"
-                    +   HOSPEDAGEM + "integer"
-                    +   ENTRETERIMENTO + "integer"
-                    +");";
+            "create table " + TABELA
+                    + "("
+                    + ID + " integer primary key autoincrement, "
+                    + TOTAL_ESTIMADO_QUILOMETROS + "integer"
+                    + MEDIA_QUILOMETROS + "integer"
+                    + CUSTO_MEDIO_LITRO + "integer"
+                    + TOTAL_VEICULOS + "integer"
+                    + ");";
 
     public static final String
-            DROP_TABLE = "drop table if exists "+TABELA_VIAGEM;
+            DROP_TABLE = "drop table if exists " + TABELA;
 
-    /*=========================================================
-
-    ATRIBUTOS DE MANIPULAÇÃO DA GASOLINA
-
-    ===========================================================*/
-
-
-    private long id;
+    private Long id;
 
     private long totalEstimadoQuilometros;
 
@@ -47,13 +36,11 @@ public class Gasolina {
 
     private long totalVeiculos;
 
-    private long total;
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -90,10 +77,9 @@ public class Gasolina {
     }
 
     public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
+        return totalEstimadoQuilometros
+                * mediaQuilometrosLitro
+                * custoMedioLitro
+                * totalVeiculos;
     }
 }

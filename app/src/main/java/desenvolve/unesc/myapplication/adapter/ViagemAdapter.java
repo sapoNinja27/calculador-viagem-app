@@ -7,22 +7,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.List;
 
 import desenvolve.unesc.myapplication.R;
-import desenvolve.unesc.myapplication.database.dao.FilmeDAO;
-import desenvolve.unesc.myapplication.database.model.FilmeModel;
+import desenvolve.unesc.myapplication.database.dao.ViagemService;
+import desenvolve.unesc.myapplication.database.model.Viagem;
 
-public class FilmeAdptar extends BaseAdapter {
+public class ViagemAdapter extends BaseAdapter {
 
     private Activity activity;
-    private List<FilmeModel> lista;
+    private List<Viagem> lista;
     private LayoutInflater inflater;
 
-    public FilmeAdptar(Activity context, List<FilmeModel> lista) {
+    public ViagemAdapter(Activity context, List<Viagem> lista) {
         activity = context;
         this.lista = lista;
     }
@@ -52,12 +51,12 @@ public class FilmeAdptar extends BaseAdapter {
         View rootView = inflater.inflate(R.layout.list_row, null);
 
         TextView nome = (TextView) rootView.findViewById(R.id.nome);
-        nome.setText(lista.get(position).getFilme());
+        nome.setText(lista.get(position).getDestino());
         Button btnDeletar = rootView.findViewById(R.id.btnDeletar);
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new FilmeDAO(activity).Delete(lista.get(position).getFilme());
+                new ViagemService(activity).Delete(lista.get(position).getId());
                 lista.remove(position);
                 notifyDataSetChanged();
             }

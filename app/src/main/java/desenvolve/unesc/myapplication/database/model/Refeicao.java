@@ -3,53 +3,36 @@ package desenvolve.unesc.myapplication.database.model;
 public class Refeicao {
 
     public static final String
-            TABELA_VIAGEM = "tb_vuagens";
+            TABELA = "tb_refeicao";
 
     public static final String
             ID = "_id",
-            DESTINO = "destino",
-            GASOLINA = "gasolina",
-            TARIFA_AEREA = "tarifa",
-            REFEICAO = "refeicao",
-            HOSPEDAGEM = "hospedagem",
-            ENTRETERIMENTO = "entreterimento";
+            CUSTO_ESTIMADO_REFEICAO = "custoEstimadoRefeicao",
+            REFEICOES_DIA = "refeicoesDia";
 
     public static final String
             CREATE_TABLE =
-            "create table "+TABELA_VIAGEM
+            "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   DESTINO + " text not null "
-                    +   GASOLINA + "integer"
-                    +   TARIFA_AEREA + "integer"
-                    +   REFEICAO + "integer"
-                    +   HOSPEDAGEM + "integer"
-                    +   ENTRETERIMENTO + "integer"
+                    +   CUSTO_ESTIMADO_REFEICAO + "integer"
+                    +   REFEICOES_DIA + "integer"
                     +");";
 
     public static final String
-            DROP_TABLE = "drop table if exists "+TABELA_VIAGEM;
+            DROP_TABLE = "drop table if exists "+TABELA;
 
-    /*=========================================================
-
-    ATRIBUTOS DE MANIPULAÇÃO DA REFEIÇÃO
-
-    ===========================================================*/
-
-
-    private long id;
+    private Long id;
 
     private long custoEstimadoRefeicao;
 
     private long refeicoesDia;
 
-    private long total;
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -70,10 +53,6 @@ public class Refeicao {
     }
 
     public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
+        return custoEstimadoRefeicao * refeicoesDia;
     }
 }

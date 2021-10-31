@@ -3,41 +3,29 @@ package desenvolve.unesc.myapplication.database.model;
 public class Hospedagem {
 
     public static final String
-            TABELA_VIAGEM = "tb_vuagens";
+            TABELA = "tb_hospedagem";
 
     public static final String
             ID = "_id",
-            DESTINO = "destino",
-            GASOLINA = "gasolina",
-            TARIFA_AEREA = "tarifa",
-            REFEICAO = "refeicao",
-            HOSPEDAGEM = "hospedagem",
-            ENTRETERIMENTO = "entreterimento";
+            CUSTO_NOITE = "custoNoite",
+            TOTAL_NOITES = "totalNoites",
+            TOTAL_QUARTOS = "totalQuartos";
 
     public static final String
             CREATE_TABLE =
-            "create table "+TABELA_VIAGEM
+            "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   DESTINO + " text not null "
-                    +   GASOLINA + "integer"
-                    +   TARIFA_AEREA + "integer"
-                    +   REFEICAO + "integer"
-                    +   HOSPEDAGEM + "integer"
-                    +   ENTRETERIMENTO + "integer"
+                    +   CUSTO_NOITE + "integer"
+                    +   TOTAL_NOITES + "integer"
+                    +   TOTAL_QUARTOS + "integer"
                     +");";
 
     public static final String
-            DROP_TABLE = "drop table if exists "+TABELA_VIAGEM;
-
-    /*=========================================================
-
-    ATRIBUTOS DE MANIPULAÇÃO DA VIAGEM
-
-    ===========================================================*/
+            DROP_TABLE = "drop table if exists "+TABELA;
 
 
-    private long id;
+    private Long id;
 
     private long custoNoite;
 
@@ -45,13 +33,11 @@ public class Hospedagem {
 
     private long totalQuartos;
 
-    private long total;
-
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -80,10 +66,8 @@ public class Hospedagem {
     }
 
     public long getTotal() {
-        return total;
-    }
-
-    public void setTotal(long total) {
-        this.total = total;
+        return custoNoite
+                * totalNoites
+                * totalQuartos;
     }
 }

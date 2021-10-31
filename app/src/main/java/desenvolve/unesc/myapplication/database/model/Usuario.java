@@ -3,35 +3,29 @@ package desenvolve.unesc.myapplication.database.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioModel {
+public class Usuario {
 
     public static final String
-    TABELA_NOME = "tb_usuario";
+    TABELA = "tb_usuario";
 
     public static final String
-    COLUNA_ID = "_id",
-    COLUNA_USUARIO = "usuario",
-    COLUNA_SENHA = "senha";
+    ID = "_id",
+    USUARIO = "usuario",
+    SENHA = "senha";
 
     public static final String
     CREATE_TABLE =
-    "create table "+TABELA_NOME
+    "create table "+TABELA
     +"("
-    +   COLUNA_ID + " integer primary key autoincrement, "
-    +   COLUNA_USUARIO + " text not null, "
-    +   COLUNA_SENHA + " text not null "
+    +   ID + " integer primary key autoincrement, "
+    +   USUARIO + " text not null, "
+    +   SENHA + " text not null "
     +");";
 
     public static final String
-    DROP_TABLE = "drop table if exists "+TABELA_NOME;
+    DROP_TABLE = "drop table if exists "+TABELA;
 
-    /*=========================================================
-
-    ATRIBUTOS DE MANIPULAÇÃO DO USUÁRIO
-
-    ===========================================================*/
-
-    private long id;
+    private Long id;
 
     private String usuario;
 
@@ -39,11 +33,18 @@ public class UsuarioModel {
 
     private List<Viagem> viagens = new ArrayList<>();
 
-    public long getId() {
+    public Usuario(String usuario, String senha) {
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+
+    public Usuario(){};
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -61,5 +62,13 @@ public class UsuarioModel {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public List<Viagem> getViagens() {
+        return viagens;
+    }
+
+    public void setViagens(List<Viagem> viagens) {
+        this.viagens = viagens;
     }
 }

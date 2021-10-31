@@ -4,7 +4,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
 
-public abstract class AbstrataDAO {
+public abstract class AbstractService {
 
     protected SQLiteDatabase db;
     protected DBOpenHelper helper;

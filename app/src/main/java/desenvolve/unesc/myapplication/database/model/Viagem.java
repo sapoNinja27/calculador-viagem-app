@@ -3,7 +3,7 @@ package desenvolve.unesc.myapplication.database.model;
 public class Viagem {
 
     public static final String
-            TABELA_VIAGEM = "tb_vuagens";
+            TABELA = "tb_viagem";
 
     public static final String
             ID = "_id",
@@ -12,32 +12,28 @@ public class Viagem {
             TARIFA_AEREA = "tarifa",
             REFEICAO = "refeicao",
             HOSPEDAGEM = "hospedagem",
-            ENTRETERIMENTO = "entreterimento";
+            ENTRETERIMENTO = "entreterimento",
+            USUARIO = "usuario";
 
     public static final String
             CREATE_TABLE =
-            "create table "+TABELA_VIAGEM
+            "create table "+ TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   DESTINO + " text not null "
-                    +   GASOLINA + "integer"
-                    +   TARIFA_AEREA + "integer"
-                    +   REFEICAO + "integer"
-                    +   HOSPEDAGEM + "integer"
-                    +   ENTRETERIMENTO + "integer"
+                    +   DESTINO + " text not null, "
+                    +   GASOLINA + " integer, "
+                    +   TARIFA_AEREA + " integer, "
+                    +   REFEICAO + " integer, "
+                    +   HOSPEDAGEM + " integer, "
+                    +   ENTRETERIMENTO + " integer, "
+                    +   USUARIO + " integer "
                     +");";
 
     public static final String
-            DROP_TABLE = "drop table if exists "+TABELA_VIAGEM;
-
-    /*=========================================================
-
-    ATRIBUTOS DE MANIPULAÇÃO DA VIAGEM
-
-    ===========================================================*/
+            DROP_TABLE = "drop table if exists "+ TABELA;
 
 
-    private long id;
+    private Long id;
 
     private String destino;
 
@@ -51,18 +47,76 @@ public class Viagem {
 
     private Entreterimento entreterimento;
 
-    public long getId() {
+    private Usuario usuario;
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDestino() {
+        return destino;
+    }
+
+    public void setDestino(String destino) {
+        this.destino = destino;
+    }
+
+    public Gasolina getGasolina() {
+        return gasolina;
+    }
+
+    public void setGasolina(Gasolina gasolina) {
+        this.gasolina = gasolina;
+    }
+
+    public TarifaAerea getTarifaAerea() {
+        return tarifaAerea;
+    }
+
+    public void setTarifaAerea(TarifaAerea tarifaAerea) {
+        this.tarifaAerea = tarifaAerea;
+    }
+
+    public Refeicao getRefeicao() {
+        return refeicao;
+    }
+
+    public void setRefeicao(Refeicao refeicao) {
+        this.refeicao = refeicao;
+    }
+
+    public Hospedagem getHospedagem() {
+        return hospedagem;
+    }
+
+    public void setHospedagem(Hospedagem hospedagem) {
+        this.hospedagem = hospedagem;
+    }
+
+    public Entreterimento getEntreterimento() {
+        return entreterimento;
+    }
+
+    public void setEntreterimento(Entreterimento entreterimento) {
+        this.entreterimento = entreterimento;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public long getTotal(){
         return gasolina.getTotal() +
                 tarifaAerea.getTotal() +
-                refeicao.getTotal() +
+                (refeicao.getTotal() * hospedagem.getTotalNoites()) +
                 hospedagem.getTotal() +
                 entreterimento.getTotal();
     }
