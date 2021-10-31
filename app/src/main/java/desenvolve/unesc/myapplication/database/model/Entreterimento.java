@@ -16,9 +16,9 @@ public class Entreterimento {
             "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   VILA_ENCANTADA + "integer"
-                    +   ZOO_POMERODE + "integer"
-                    +   EMPREVISTOS + "integer"
+                    +   VILA_ENCANTADA + " integer, "
+                    +   ZOO_POMERODE + " integer, "
+                    +   EMPREVISTOS + " integer"
                     +");";
 
     public static final String

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,6 @@ public class GasolinaActivity extends AppCompatActivity {
     private EditText custoKm;
     private EditText totalVeiculos;
     private TextView total;
-    private TextView alert;
     private Button next;
 
     @Override
@@ -37,7 +37,6 @@ public class GasolinaActivity extends AppCompatActivity {
         totalVeiculos = findViewById(R.id.totalVeiculos);
 
         total = findViewById(R.id.total);
-        alert = findViewById(R.id.alert);
 
         next = findViewById(R.id.adc);
 
@@ -109,7 +108,7 @@ public class GasolinaActivity extends AppCompatActivity {
 
                     startActivity(new Intent(GasolinaActivity.this, TarifaAereaActivity.class));
                 }else{
-                    alert.setText("Todos os valores são obrigatorios");
+                    Toast.makeText(GasolinaActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
             }
         });

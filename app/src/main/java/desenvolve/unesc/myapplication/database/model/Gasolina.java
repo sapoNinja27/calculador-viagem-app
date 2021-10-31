@@ -17,10 +17,10 @@ public class Gasolina {
             "create table " + TABELA
                     + "("
                     + ID + " integer primary key autoincrement, "
-                    + TOTAL_ESTIMADO_QUILOMETROS + "integer"
-                    + MEDIA_QUILOMETROS + "integer"
-                    + CUSTO_MEDIO_LITRO + "integer"
-                    + TOTAL_VEICULOS + "integer"
+                    + TOTAL_ESTIMADO_QUILOMETROS + " integer, "
+                    + MEDIA_QUILOMETROS + " integer, "
+                    + CUSTO_MEDIO_LITRO + " integer, "
+                    + TOTAL_VEICULOS + " integer"
                     + ");";
 
     public static final String

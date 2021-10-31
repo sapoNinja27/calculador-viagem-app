@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +25,6 @@ public class HospedagemActivity extends AppCompatActivity {
     private EditText totalNoites;
     private EditText totalQuartos;
     private TextView total;
-    private TextView alert;
     private Button next;
 
     @Override
@@ -37,7 +37,6 @@ public class HospedagemActivity extends AppCompatActivity {
         totalQuartos = findViewById(R.id.totalQuartos);
 
         total = findViewById(R.id.total);
-        alert = findViewById(R.id.alert);
 
         next = findViewById(R.id.adc);
 
@@ -94,7 +93,7 @@ public class HospedagemActivity extends AppCompatActivity {
 
                     startActivity(new Intent(HospedagemActivity.this, EntreterimentoActivity.class));
                 }else{
-                    alert.setText("Todos os valores são obrigatorios");
+                    Toast.makeText(HospedagemActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
             }
         });

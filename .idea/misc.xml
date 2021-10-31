@@ -32,6 +32,8 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.171875" />
         <entry key="app/src/main/res/layout/activity_tarifa_aerea.xml" value="0.1859375" />
         <entry key="app/src/main/res/layout/activity_viagens.xml" value="0.1859375" />
+        <entry key="app/src/main/res/layout/list_row.xml" value="0.24230072463768115" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20208333333333334" />
       </map>
     </option>
   </component>

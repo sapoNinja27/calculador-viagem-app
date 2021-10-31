@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +24,6 @@ public class RefeicaoActivity extends AppCompatActivity {
     private EditText custoRefeicao;
     private EditText refeicoesDia;
     private TextView total;
-    private TextView alert;
     private Button next;
 
     @Override
@@ -35,7 +35,6 @@ public class RefeicaoActivity extends AppCompatActivity {
         refeicoesDia = findViewById(R.id.refeicoesDia);
 
         total = findViewById(R.id.total);
-        alert = findViewById(R.id.alert);
 
         next = findViewById(R.id.adc);
 
@@ -78,7 +77,7 @@ public class RefeicaoActivity extends AppCompatActivity {
 
                     startActivity(new Intent(RefeicaoActivity.this, HospedagemActivity.class));
                 }else{
-                    alert.setText("Todos os valores são obrigatorios");
+                    Toast.makeText(RefeicaoActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
             }
         });

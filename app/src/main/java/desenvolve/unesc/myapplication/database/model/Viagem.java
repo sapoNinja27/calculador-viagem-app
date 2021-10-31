@@ -113,7 +113,7 @@ public class Viagem {
         this.usuario = usuario;
     }
 
-    public long getTotal(){
+    public Long getTotal(){
         return gasolina.getTotal() +
                 tarifaAerea.getTotal() +
                 (refeicao.getTotal() * hospedagem.getTotalNoites()) +

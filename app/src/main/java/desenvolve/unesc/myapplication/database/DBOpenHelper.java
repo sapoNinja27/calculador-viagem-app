@@ -16,7 +16,7 @@ import desenvolve.unesc.myapplication.database.model.Viagem;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     public static final String
-    DATABASE_NOME = "bancoViagem.db";
+    DATABASE_NOME = "bancoViagem";
 
     public static final int
     DATABASE_VERSAO = 1;

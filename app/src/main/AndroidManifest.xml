@@ -30,6 +30,7 @@
         <activity android:name=".TarifaAereaActivity"/>
         <activity android:name=".HospedagemActivity"/>
         <activity android:name=".ViagensActivity"/>
+<!--        <activity android:name=".ViagemActivity"/>-->
 
     </application>
 

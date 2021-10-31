@@ -40,5 +40,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnViagens.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ViagensActivity.class));
+            }
+        });
+
+
+
     }
 }

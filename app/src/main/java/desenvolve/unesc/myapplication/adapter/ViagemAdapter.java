@@ -51,7 +51,9 @@ public class ViagemAdapter extends BaseAdapter {
         View rootView = inflater.inflate(R.layout.list_row, null);
 
         TextView nome = (TextView) rootView.findViewById(R.id.nome);
-        nome.setText(lista.get(position).getDestino());
+        TextView total = (TextView) rootView.findViewById(R.id.total);
+        nome.setText("Destino: " + lista.get(position).getDestino());
+        total.setText("Total: " + lista.get(position).getTotal().toString() + "R$");
         Button btnDeletar = rootView.findViewById(R.id.btnDeletar);
         btnDeletar.setOnClickListener(new View.OnClickListener() {
             @Override

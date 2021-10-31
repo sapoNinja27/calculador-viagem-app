@@ -15,8 +15,8 @@ public class Refeicao {
             "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   CUSTO_ESTIMADO_REFEICAO + "integer"
-                    +   REFEICOES_DIA + "integer"
+                    +   CUSTO_ESTIMADO_REFEICAO + " integer, "
+                    +   REFEICOES_DIA + " integer"
                     +");";
 
     public static final String

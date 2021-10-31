@@ -15,8 +15,8 @@ public class TarifaAerea {
             "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   CUSTO_ESTIMADO_PESSOA + "integer"
-                    +   ALUGUEL_VEICULO + "integer"
+                    +   CUSTO_ESTIMADO_PESSOA + " integer, "
+                    +   ALUGUEL_VEICULO + " integer"
                     +");";
 
     public static final String

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
+import desenvolve.unesc.myapplication.database.model.Entreterimento;
 import desenvolve.unesc.myapplication.database.model.Hospedagem;
 import desenvolve.unesc.myapplication.database.model.Viagem;
 

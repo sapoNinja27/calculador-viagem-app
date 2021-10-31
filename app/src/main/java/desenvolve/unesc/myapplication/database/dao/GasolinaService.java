@@ -7,6 +7,9 @@ import android.database.Cursor;
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
 import desenvolve.unesc.myapplication.database.model.Entreterimento;
 import desenvolve.unesc.myapplication.database.model.Gasolina;
+import desenvolve.unesc.myapplication.database.model.Hospedagem;
+import desenvolve.unesc.myapplication.database.model.Refeicao;
+import desenvolve.unesc.myapplication.database.model.TarifaAerea;
 import desenvolve.unesc.myapplication.database.model.Viagem;
 
 public class GasolinaService extends AbstractService {
@@ -24,7 +27,7 @@ public class GasolinaService extends AbstractService {
         helper = new DBOpenHelper(contexto);
     }
 
-    public Long Insert(Gasolina gasolina) {
+    public long Insert(Gasolina gasolina) {
 
         long linhasAfetadas;
 

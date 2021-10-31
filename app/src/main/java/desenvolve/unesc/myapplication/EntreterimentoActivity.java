@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,7 +26,6 @@ public class EntreterimentoActivity extends AppCompatActivity {
     private EditText zooPomerode;
     private EditText imprevistos;
     private TextView total;
-    private TextView alert;
     private Button next;
     private ViagemService viagemService;
 
@@ -41,7 +41,6 @@ public class EntreterimentoActivity extends AppCompatActivity {
         imprevistos = findViewById(R.id.imprevistos);
 
         total = findViewById(R.id.total);
-        alert = findViewById(R.id.alert);
 
         next = findViewById(R.id.adc);
 
@@ -101,7 +100,7 @@ public class EntreterimentoActivity extends AppCompatActivity {
 
                     startActivity(new Intent(EntreterimentoActivity.this, MainActivity.class));
                 }else{
-                    alert.setText("Todos os valores são obrigatorios");
+                    Toast.makeText(EntreterimentoActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
             }
         });

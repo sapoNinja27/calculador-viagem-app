@@ -13,6 +13,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
+import desenvolve.unesc.myapplication.database.model.Entreterimento;
+import desenvolve.unesc.myapplication.database.model.Gasolina;
+import desenvolve.unesc.myapplication.database.model.Hospedagem;
+import desenvolve.unesc.myapplication.database.model.Refeicao;
+import desenvolve.unesc.myapplication.database.model.TarifaAerea;
 import desenvolve.unesc.myapplication.database.model.Usuario;
 import desenvolve.unesc.myapplication.database.model.Viagem;
 
@@ -83,11 +88,10 @@ public class UsuarioService extends AbstractService {
 
     public Usuario Find(final String nome, String senha) {
 
-        Usuario usuario = new Usuario();
+        Usuario usuario = null;
 
         try {
             Open();
-
             Cursor cursor = db.query
                     (
                             Usuario.TABELA,

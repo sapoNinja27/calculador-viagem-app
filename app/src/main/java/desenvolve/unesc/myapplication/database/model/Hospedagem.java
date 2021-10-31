@@ -16,9 +16,9 @@ public class Hospedagem {
             "create table "+TABELA
                     +"("
                     +   ID + " integer primary key autoincrement, "
-                    +   CUSTO_NOITE + "integer"
-                    +   TOTAL_NOITES + "integer"
-                    +   TOTAL_QUARTOS + "integer"
+                    +   CUSTO_NOITE + " integer, "
+                    +   TOTAL_NOITES + " integer, "
+                    +   TOTAL_QUARTOS + " integer"
                     +");";
 
     public static final String

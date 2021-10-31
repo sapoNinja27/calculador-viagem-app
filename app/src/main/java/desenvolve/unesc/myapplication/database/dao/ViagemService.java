@@ -5,9 +5,17 @@ import android.content.Context;
 import android.database.Cursor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import desenvolve.unesc.myapplication.LoginActivity;
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
+import desenvolve.unesc.myapplication.database.model.Entreterimento;
+import desenvolve.unesc.myapplication.database.model.Gasolina;
+import desenvolve.unesc.myapplication.database.model.Hospedagem;
+import desenvolve.unesc.myapplication.database.model.Refeicao;
+import desenvolve.unesc.myapplication.database.model.TarifaAerea;
+import desenvolve.unesc.myapplication.database.model.Usuario;
 import desenvolve.unesc.myapplication.database.model.Viagem;
 
 public class ViagemService extends AbstractService {
@@ -18,7 +26,6 @@ public class ViagemService extends AbstractService {
             Viagem.GASOLINA,
             Viagem.DESTINO,
             Viagem.HOSPEDAGEM,
-            Viagem.TABELA,
             Viagem.ENTRETERIMENTO,
             Viagem.REFEICAO,
             Viagem.TARIFA_AEREA,
@@ -46,8 +53,8 @@ public class ViagemService extends AbstractService {
 
         long linhasAfetadas;
         try {
-            Open();
 
+            Open();
             ContentValues values = new ContentValues();
             values.put(Viagem.DESTINO, viagem.getDestino());
             values.put(Viagem.GASOLINA,gasolinaService.Insert(viagem.getGasolina()));
@@ -127,20 +134,20 @@ public class ViagemService extends AbstractService {
             while (!cursor.isAfterLast()) {
                 viagens.add(CursorToStructure(cursor));
                 cursor.moveToNext();
-                break;
             }
         }
         finally {
             Close();
         }
+        LoginActivity.usuario.setViagens(viagens);
         return viagens;
     }
 
     public final Viagem CursorToStructure(Cursor cursor) {
         Viagem viagem = new Viagem();
         viagem.setId(cursor.getLong(0));
-        viagem.setDestino(cursor.getString(1));
-        viagem.setGasolina(gasolinaService.Select(cursor.getLong(2)));
+        viagem.setGasolina(gasolinaService.Select(cursor.getLong(1)));
+        viagem.setDestino(cursor.getString(2));
         viagem.setTarifaAerea(tarifaAereaService.Select(cursor.getLong(3)));
         viagem.setRefeicao(refeicaoService.Select(cursor.getLong(4)));
         viagem.setHospedagem(hospedagemService.Select(cursor.getLong(5)));
