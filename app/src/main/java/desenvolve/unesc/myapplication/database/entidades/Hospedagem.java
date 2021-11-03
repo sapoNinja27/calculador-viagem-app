@@ -1,4 +1,4 @@
-package desenvolve.unesc.myapplication.database.model;
+package desenvolve.unesc.myapplication.database.entidades;
 
 public class Hospedagem {
 

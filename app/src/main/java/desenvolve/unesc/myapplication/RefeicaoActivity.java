@@ -13,11 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Refeicao;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
+import desenvolve.unesc.myapplication.database.entidades.Refeicao;
 
 public class RefeicaoActivity extends AppCompatActivity {
 
@@ -44,6 +40,9 @@ public class RefeicaoActivity extends AppCompatActivity {
         custoRefeicao.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(custoRefeicao.getText().toString())){
+                    custoRefeicao.setText("0");
+                }
                 refeicao.setCustoEstimadoRefeicao(Long.parseLong(custoRefeicao.getText().toString()));
                 total.setText("Total: "+ refeicao.getTotal().toString());
             }
@@ -57,6 +56,9 @@ public class RefeicaoActivity extends AppCompatActivity {
         refeicoesDia.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(refeicoesDia.getText().toString())){
+                    refeicoesDia.setText("0");
+                }
                 refeicao.setRefeicoesDia(Long.parseLong(refeicoesDia.getText().toString()));
                 total.setText("Total: "+ refeicao.getTotal().toString());
             }

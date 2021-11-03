@@ -4,13 +4,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import desenvolve.unesc.myapplication.database.model.Entreterimento;
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Hospedagem;
-import desenvolve.unesc.myapplication.database.model.Refeicao;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
-import desenvolve.unesc.myapplication.database.model.Usuario;
-import desenvolve.unesc.myapplication.database.model.Viagem;
+import desenvolve.unesc.myapplication.database.entidades.Entreterimento;
+import desenvolve.unesc.myapplication.database.entidades.Gasolina;
+import desenvolve.unesc.myapplication.database.entidades.Hospedagem;
+import desenvolve.unesc.myapplication.database.entidades.Refeicao;
+import desenvolve.unesc.myapplication.database.entidades.TarifaAerea;
+import desenvolve.unesc.myapplication.database.entidades.Usuario;
+import desenvolve.unesc.myapplication.database.entidades.Viagem;
 
 
 public class DBOpenHelper extends SQLiteOpenHelper {

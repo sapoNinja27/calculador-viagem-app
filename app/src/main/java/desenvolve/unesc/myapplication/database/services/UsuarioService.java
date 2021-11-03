@@ -1,25 +1,14 @@
-package desenvolve.unesc.myapplication.database.dao;
+package desenvolve.unesc.myapplication.database.services;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.os.Build;
 
-import androidx.annotation.RequiresApi;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
-import desenvolve.unesc.myapplication.database.model.Entreterimento;
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Hospedagem;
-import desenvolve.unesc.myapplication.database.model.Refeicao;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
-import desenvolve.unesc.myapplication.database.model.Usuario;
-import desenvolve.unesc.myapplication.database.model.Viagem;
+import desenvolve.unesc.myapplication.database.entidades.Usuario;
+import desenvolve.unesc.myapplication.database.entidades.Viagem;
 
 public class UsuarioService extends AbstractService {
 
@@ -65,25 +54,6 @@ public class UsuarioService extends AbstractService {
 
         db.delete(Usuario.TABELA, Usuario.ID + " = ?", new String[]{usuario.getId().toString()});
         Close();
-    }
-
-    public Integer Update(final Usuario usuario) {
-
-        int linhasAfetadas;
-
-        try {
-            Open();
-
-            ContentValues values = new ContentValues();
-            values.put(Usuario.USUARIO, usuario.getSenha());
-            values.put(Usuario.SENHA, usuario.getSenha());
-            linhasAfetadas = db.update(Usuario.TABELA, values, Usuario.ID + " = ?", new String[]{usuario.getId().toString()});
-        }
-        finally {
-            Close();
-        }
-
-        return linhasAfetadas;
     }
 
     public Usuario Find(final String nome, String senha) {

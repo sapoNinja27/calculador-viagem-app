@@ -13,9 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-import desenvolve.unesc.myapplication.database.model.Gasolina;
+import desenvolve.unesc.myapplication.database.entidades.Gasolina;
 
 public class GasolinaActivity extends AppCompatActivity {
 
@@ -46,6 +44,9 @@ public class GasolinaActivity extends AppCompatActivity {
         totalKm.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(totalKm.getText().toString())){
+                    totalKm.setText("0");
+                }
                 gasolina.setTotalEstimadoQuilometros(Long.parseLong(totalKm.getText().toString()));
                 total.setText("Total: "+ gasolina.getTotal().toString());
             }
@@ -59,6 +60,9 @@ public class GasolinaActivity extends AppCompatActivity {
         mediaKm.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(mediaKm.getText().toString())){
+                    mediaKm.setText("0");
+                }
                 gasolina.setMediaQuilometrosLitro(Long.parseLong(mediaKm.getText().toString()));
                 total.setText("Total: "+ gasolina.getTotal().toString());
             }
@@ -72,6 +76,9 @@ public class GasolinaActivity extends AppCompatActivity {
         custoKm.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(custoKm.getText().toString())){
+                    custoKm.setText("0");
+                }
                 gasolina.setCustoMedioLitro(Long.parseLong(custoKm.getText().toString()));
                 total.setText("Total: "+ gasolina.getTotal().toString());
             }
@@ -85,6 +92,9 @@ public class GasolinaActivity extends AppCompatActivity {
         totalVeiculos.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(totalVeiculos.getText().toString())){
+                    totalVeiculos.setText("0");
+                }
                 gasolina.setTotalVeiculos(Long.parseLong(totalVeiculos.getText().toString()));
                 total.setText("Total: "+ gasolina.getTotal().toString());
             }

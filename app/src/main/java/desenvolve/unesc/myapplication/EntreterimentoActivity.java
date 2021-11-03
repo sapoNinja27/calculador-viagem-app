@@ -13,12 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-import desenvolve.unesc.myapplication.database.dao.ViagemService;
-import desenvolve.unesc.myapplication.database.model.Entreterimento;
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Hospedagem;
+import desenvolve.unesc.myapplication.database.services.ViagemService;
+import desenvolve.unesc.myapplication.database.entidades.Entreterimento;
 
 public class EntreterimentoActivity extends AppCompatActivity {
 
@@ -50,6 +46,9 @@ public class EntreterimentoActivity extends AppCompatActivity {
         vilaEncantada.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(vilaEncantada.getText().toString())){
+                    vilaEncantada.setText("0");
+                }
                 entreterimento.setVilaEncantada(Long.parseLong(vilaEncantada.getText().toString()));
                 total.setText("Total: "+ entreterimento.getTotal().toString());
             }
@@ -63,6 +62,9 @@ public class EntreterimentoActivity extends AppCompatActivity {
         zooPomerode.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(zooPomerode.getText().toString())){
+                    zooPomerode.setText("0");
+                }
                 entreterimento.setZooPomerode(Long.parseLong(zooPomerode.getText().toString()));
                 total.setText("Total: "+ entreterimento.getTotal().toString());
             }
@@ -76,6 +78,9 @@ public class EntreterimentoActivity extends AppCompatActivity {
         imprevistos.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(imprevistos.getText().toString())){
+                    imprevistos.setText("0");
+                }
                 entreterimento.setEmprevistos(Long.parseLong(imprevistos.getText().toString()));
                 total.setText("Total: "+ entreterimento.getTotal().toString());
             }

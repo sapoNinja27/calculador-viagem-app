@@ -12,8 +12,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import desenvolve.unesc.myapplication.R;
-import desenvolve.unesc.myapplication.database.dao.ViagemService;
-import desenvolve.unesc.myapplication.database.model.Viagem;
+import desenvolve.unesc.myapplication.database.services.ViagemService;
+import desenvolve.unesc.myapplication.database.entidades.Viagem;
 
 public class ViagemAdapter extends BaseAdapter {
 

@@ -12,10 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
+import desenvolve.unesc.myapplication.database.entidades.TarifaAerea;
 
 public class TarifaAereaActivity extends AppCompatActivity {
 
@@ -44,6 +41,9 @@ public class TarifaAereaActivity extends AppCompatActivity {
         custoPessoa.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(custoPessoa.getText().toString())){
+                    custoPessoa.setText("0");
+                }
                 tarifaAerea.setCustoEstimadoPessoa(Long.parseLong(custoPessoa.getText().toString()));
                 total.setText("Total: "+ tarifaAerea.getTotal().toString());
             }
@@ -57,6 +57,9 @@ public class TarifaAereaActivity extends AppCompatActivity {
         aluguelVeiculo.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(aluguelVeiculo.getText().toString())){
+                    aluguelVeiculo.setText("0");
+                }
                 tarifaAerea.setAluguelVeiculo(Long.parseLong(aluguelVeiculo.getText().toString()));
                 total.setText("Total: "+ tarifaAerea.getTotal().toString());
             }

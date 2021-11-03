@@ -1,4 +1,4 @@
-package desenvolve.unesc.myapplication.database.model;
+package desenvolve.unesc.myapplication.database.entidades;
 
 import java.util.ArrayList;
 import java.util.List;

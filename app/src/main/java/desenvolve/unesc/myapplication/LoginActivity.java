@@ -12,8 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Objects;
 
-import desenvolve.unesc.myapplication.database.dao.UsuarioService;
-import desenvolve.unesc.myapplication.database.model.Usuario;
+import desenvolve.unesc.myapplication.database.services.UsuarioService;
+import desenvolve.unesc.myapplication.database.entidades.Usuario;
 
 public class LoginActivity extends AppCompatActivity {
 

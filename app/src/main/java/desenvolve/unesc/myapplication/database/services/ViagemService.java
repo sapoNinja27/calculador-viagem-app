@@ -1,22 +1,15 @@
-package desenvolve.unesc.myapplication.database.dao;
+package desenvolve.unesc.myapplication.database.services;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import desenvolve.unesc.myapplication.LoginActivity;
 import desenvolve.unesc.myapplication.database.DBOpenHelper;
-import desenvolve.unesc.myapplication.database.model.Entreterimento;
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Hospedagem;
-import desenvolve.unesc.myapplication.database.model.Refeicao;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
-import desenvolve.unesc.myapplication.database.model.Usuario;
-import desenvolve.unesc.myapplication.database.model.Viagem;
+import desenvolve.unesc.myapplication.database.entidades.Viagem;
 
 public class ViagemService extends AbstractService {
 
@@ -98,30 +91,6 @@ public class ViagemService extends AbstractService {
         }
         Close();
     }
-
-    public Integer Update(final Viagem viagem) {
-
-        int linhasAfetadas;
-
-        try {
-            Open();
-
-            ContentValues values = new ContentValues();
-            values.put(Viagem.DESTINO, viagem.getDestino());
-            values.put(Viagem.GASOLINA,gasolinaService.Update(viagem.getGasolina()));
-            values.put(Viagem.TARIFA_AEREA,tarifaAereaService.Update(viagem.getTarifaAerea()));
-            values.put(Viagem.REFEICAO,refeicaoService.Update(viagem.getRefeicao()));
-            values.put(Viagem.HOSPEDAGEM, hospedagemService.Update(viagem.getHospedagem()));
-            values.put(Viagem.ENTRETERIMENTO, entreterimentoService.Update(viagem.getEntreterimento()));
-            linhasAfetadas = db.update(Viagem.TABELA, values, Viagem.ID + " = ?", new String[]{viagem.getId().toString()});
-        }
-        finally {
-            Close();
-        }
-
-        return linhasAfetadas;
-    }
-
 
     public List<Viagem> Select(final Long id) {
 

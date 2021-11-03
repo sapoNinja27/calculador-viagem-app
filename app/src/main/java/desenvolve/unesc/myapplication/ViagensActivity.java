@@ -1,20 +1,13 @@
 package desenvolve.unesc.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import desenvolve.unesc.myapplication.adapter.ViagemAdapter;
-import desenvolve.unesc.myapplication.database.dao.UsuarioService;
-import desenvolve.unesc.myapplication.database.dao.ViagemService;
-import desenvolve.unesc.myapplication.database.model.Usuario;
+import desenvolve.unesc.myapplication.database.services.ViagemService;
 
 public class ViagensActivity extends AppCompatActivity {
 

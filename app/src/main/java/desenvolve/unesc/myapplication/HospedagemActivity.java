@@ -13,11 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Objects;
-
-import desenvolve.unesc.myapplication.database.model.Gasolina;
-import desenvolve.unesc.myapplication.database.model.Hospedagem;
-import desenvolve.unesc.myapplication.database.model.TarifaAerea;
+import desenvolve.unesc.myapplication.database.entidades.Hospedagem;
 
 public class HospedagemActivity extends AppCompatActivity {
 
@@ -46,6 +42,9 @@ public class HospedagemActivity extends AppCompatActivity {
         custoHospedagem.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(custoHospedagem.getText().toString())){
+                    custoHospedagem.setText("0");
+                }
                 hospedagem.setCustoNoite(Long.parseLong(custoHospedagem.getText().toString()));
                 total.setText("Total: "+ hospedagem.getTotal().toString());
             }
@@ -59,6 +58,9 @@ public class HospedagemActivity extends AppCompatActivity {
         totalNoites.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(totalNoites.getText().toString())){
+                    totalNoites.setText("0");
+                }
                 hospedagem.setTotalNoites(Long.parseLong(totalNoites.getText().toString()));
                 total.setText("Total: "+ hospedagem.getTotal().toString());
             }
@@ -72,6 +74,9 @@ public class HospedagemActivity extends AppCompatActivity {
         totalQuartos.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
+                if("".equals(totalQuartos.getText().toString())){
+                    totalQuartos.setText("0");
+                }
                 hospedagem.setTotalQuartos(Long.parseLong(totalQuartos.getText().toString()));
                 total.setText("Total: "+ hospedagem.getTotal().toString());
             }

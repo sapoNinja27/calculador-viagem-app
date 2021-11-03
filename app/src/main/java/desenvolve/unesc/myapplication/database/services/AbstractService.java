@@ -1,4 +1,4 @@
-package desenvolve.unesc.myapplication.database.dao;
+package desenvolve.unesc.myapplication.database.services;
 
 import android.database.sqlite.SQLiteDatabase;
 
