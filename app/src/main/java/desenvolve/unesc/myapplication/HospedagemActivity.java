@@ -22,6 +22,7 @@ public class HospedagemActivity extends AppCompatActivity {
     private EditText totalQuartos;
     private TextView total;
     private Button next;
+    private Button skip;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class HospedagemActivity extends AppCompatActivity {
         total = findViewById(R.id.total);
 
         next = findViewById(R.id.adc);
+        skip = findViewById(R.id.skip);
 
 
         Hospedagem hospedagem = new Hospedagem();
@@ -100,6 +102,13 @@ public class HospedagemActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(HospedagemActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.viagem.setHospedagem(new Hospedagem());
+                startActivity(new Intent(HospedagemActivity.this, EntreterimentoActivity.class));
             }
         });
     }

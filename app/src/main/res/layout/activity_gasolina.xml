@@ -66,6 +66,14 @@
             android:backgroundTint="#0047FB"
             android:text="ADICIONAR A VIAGEM?" />
 
+        <Button
+            android:id="@+id/skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#B8002B"
+            android:text="PULAR" />
+
         <TextView
             android:id="@+id/alert"
             android:layout_width="match_parent"

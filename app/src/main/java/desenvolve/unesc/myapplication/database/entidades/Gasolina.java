@@ -77,9 +77,9 @@ public class Gasolina {
     }
 
     public Long getTotal() {
-        return totalEstimadoQuilometros
-                * mediaQuilometrosLitro
-                * custoMedioLitro
-                * totalVeiculos;
+        return ((totalEstimadoQuilometros
+                + mediaQuilometrosLitro)
+                * custoMedioLitro)
+                / totalVeiculos;
     }
 }

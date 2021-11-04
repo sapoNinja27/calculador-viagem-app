@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import desenvolve.unesc.myapplication.database.services.UsuarioService;
 import desenvolve.unesc.myapplication.database.services.ViagemService;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private UsuarioService usuarioService;
     private Button btnViagens;
     private EditText edtDestino;
+    private EditText duracao;
+    private EditText quantidade;
     private ViagemService viagemService;
     public static Viagem viagem = new Viagem();
 
@@ -37,9 +40,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 edtDestino = findViewById(R.id.edtDestino);
-                if (!edtDestino.getText().toString().isEmpty()) {
+                quantidade = findViewById(R.id.quantidade);
+                duracao = findViewById(R.id.duracao);
+                if (!edtDestino.getText().toString().isEmpty() && !quantidade.getText().toString().isEmpty() && !duracao.getText().toString().isEmpty()) {
                     viagem.setDestino(edtDestino.getText().toString());
+                    viagem.setDuracao(Long.parseLong(duracao.getText().toString()));
+                    viagem.setQuantidadePessoas(Long.parseLong(quantidade.getText().toString()));
                     startActivity(new Intent(MainActivity.this, GasolinaActivity.class));
+                }else {
+                    Toast.makeText(MainActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
             }
         });

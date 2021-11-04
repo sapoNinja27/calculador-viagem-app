@@ -52,7 +52,7 @@ public class Refeicao {
         this.refeicoesDia = refeicoesDia;
     }
 
-    public Long getTotal() {
-        return custoEstimadoRefeicao * refeicoesDia;
+    public Long getTotal(Viagem viagem) {
+        return ((refeicoesDia * viagem.getQuantidadePessoas()) * custoEstimadoRefeicao) * viagem.getDuracao();
     }
 }

@@ -12,6 +12,18 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Destino" />
+    <EditText
+        android:id="@+id/duracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Duração da viagem" />
+    <EditText
+        android:id="@+id/quantidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Numero de viajantes" />
     <Button
         android:id="@+id/btnNviagem"
         android:layout_width="match_parent"

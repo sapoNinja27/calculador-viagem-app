@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class TarifaAereaActivity extends AppCompatActivity {
     private TextView total;
     private TextView alert;
     private Button next;
+    private Button skip;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class TarifaAereaActivity extends AppCompatActivity {
         alert = findViewById(R.id.alert);
 
         next = findViewById(R.id.adc);
-
+        skip = findViewById(R.id.skip);
 
         TarifaAerea tarifaAerea = new TarifaAerea();
 
@@ -45,7 +47,7 @@ public class TarifaAereaActivity extends AppCompatActivity {
                     custoPessoa.setText("0");
                 }
                 tarifaAerea.setCustoEstimadoPessoa(Long.parseLong(custoPessoa.getText().toString()));
-                total.setText("Total: "+ tarifaAerea.getTotal().toString());
+                total.setText("Total: "+ tarifaAerea.getTotal(MainActivity.viagem.getQuantidadePessoas()).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -61,7 +63,7 @@ public class TarifaAereaActivity extends AppCompatActivity {
                     aluguelVeiculo.setText("0");
                 }
                 tarifaAerea.setAluguelVeiculo(Long.parseLong(aluguelVeiculo.getText().toString()));
-                total.setText("Total: "+ tarifaAerea.getTotal().toString());
+                total.setText("Total: "+ tarifaAerea.getTotal(MainActivity.viagem.getQuantidadePessoas()).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -80,8 +82,15 @@ public class TarifaAereaActivity extends AppCompatActivity {
 
                     startActivity(new Intent(TarifaAereaActivity.this, RefeicaoActivity.class));
                 }else{
-                    alert.setText("Todos os valores são obrigatorios");
+                    Toast.makeText(TarifaAereaActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.viagem.setTarifaAerea(new TarifaAerea());
+                startActivity(new Intent(TarifaAereaActivity.this, RefeicaoActivity.class));
             }
         });
     }

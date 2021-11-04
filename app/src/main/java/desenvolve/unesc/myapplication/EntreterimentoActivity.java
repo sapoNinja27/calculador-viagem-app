@@ -50,7 +50,7 @@ public class EntreterimentoActivity extends AppCompatActivity {
                     vilaEncantada.setText("0");
                 }
                 entreterimento.setVilaEncantada(Long.parseLong(vilaEncantada.getText().toString()));
-                total.setText("Total: "+ entreterimento.getTotal().toString());
+                total.setText("Total: "+ entreterimento.getTotal(MainActivity.viagem.getQuantidadePessoas()).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -66,7 +66,7 @@ public class EntreterimentoActivity extends AppCompatActivity {
                     zooPomerode.setText("0");
                 }
                 entreterimento.setZooPomerode(Long.parseLong(zooPomerode.getText().toString()));
-                total.setText("Total: "+ entreterimento.getTotal().toString());
+                total.setText("Total: "+ entreterimento.getTotal(MainActivity.viagem.getQuantidadePessoas()).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -82,7 +82,7 @@ public class EntreterimentoActivity extends AppCompatActivity {
                     imprevistos.setText("0");
                 }
                 entreterimento.setEmprevistos(Long.parseLong(imprevistos.getText().toString()));
-                total.setText("Total: "+ entreterimento.getTotal().toString());
+                total.setText("Total: "+ entreterimento.getTotal(MainActivity.viagem.getQuantidadePessoas()).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -94,19 +94,12 @@ public class EntreterimentoActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!vilaEncantada.getText().toString().isEmpty() &&
-                        !zooPomerode.getText().toString().isEmpty() &&
-                        !imprevistos.getText().toString().isEmpty()) {
+                MainActivity.viagem.setEntreterimento(entreterimento);
+                MainActivity.viagem.setUsuario(LoginActivity.usuario);
 
-                    MainActivity.viagem.setEntreterimento(entreterimento);
-                    MainActivity.viagem.setUsuario(LoginActivity.usuario);
+                viagemService.Insert(MainActivity.viagem);
 
-                    viagemService.Insert(MainActivity.viagem);
-
-                    startActivity(new Intent(EntreterimentoActivity.this, MainActivity.class));
-                }else{
-                    Toast.makeText(EntreterimentoActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
-                }
+                startActivity(new Intent(EntreterimentoActivity.this, MainActivity.class));
             }
         });
     }

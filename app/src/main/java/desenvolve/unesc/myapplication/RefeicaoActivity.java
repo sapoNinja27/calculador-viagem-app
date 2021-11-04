@@ -21,6 +21,7 @@ public class RefeicaoActivity extends AppCompatActivity {
     private EditText refeicoesDia;
     private TextView total;
     private Button next;
+    private Button skip;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class RefeicaoActivity extends AppCompatActivity {
         total = findViewById(R.id.total);
 
         next = findViewById(R.id.adc);
+        skip = findViewById(R.id.skip);
 
 
         Refeicao refeicao = new Refeicao();
@@ -44,7 +46,7 @@ public class RefeicaoActivity extends AppCompatActivity {
                     custoRefeicao.setText("0");
                 }
                 refeicao.setCustoEstimadoRefeicao(Long.parseLong(custoRefeicao.getText().toString()));
-                total.setText("Total: "+ refeicao.getTotal().toString());
+                total.setText("Total: "+ refeicao.getTotal(MainActivity.viagem).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -60,7 +62,7 @@ public class RefeicaoActivity extends AppCompatActivity {
                     refeicoesDia.setText("0");
                 }
                 refeicao.setRefeicoesDia(Long.parseLong(refeicoesDia.getText().toString()));
-                total.setText("Total: "+ refeicao.getTotal().toString());
+                total.setText("Total: "+ refeicao.getTotal(MainActivity.viagem).toString());
             }
 
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -81,6 +83,13 @@ public class RefeicaoActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(RefeicaoActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.viagem.setRefeicao(new Refeicao());
+                startActivity(new Intent(RefeicaoActivity.this, HospedagemActivity.class));
             }
         });
     }

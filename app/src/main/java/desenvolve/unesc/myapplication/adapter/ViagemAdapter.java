@@ -2,6 +2,7 @@ package desenvolve.unesc.myapplication.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import desenvolve.unesc.myapplication.GasolinaActivity;
+import desenvolve.unesc.myapplication.MainActivity;
 import desenvolve.unesc.myapplication.R;
+import desenvolve.unesc.myapplication.TarifaAereaActivity;
+import desenvolve.unesc.myapplication.ViagemActivity;
 import desenvolve.unesc.myapplication.database.services.ViagemService;
 import desenvolve.unesc.myapplication.database.entidades.Viagem;
 
@@ -51,16 +56,15 @@ public class ViagemAdapter extends BaseAdapter {
         View rootView = inflater.inflate(R.layout.list_row, null);
 
         TextView nome = (TextView) rootView.findViewById(R.id.nome);
-        TextView total = (TextView) rootView.findViewById(R.id.total);
         nome.setText("Destino: " + lista.get(position).getDestino());
-        total.setText("Total: " + lista.get(position).getTotal().toString() + "R$");
-        Button btnDeletar = rootView.findViewById(R.id.btnDeletar);
-        btnDeletar.setOnClickListener(new View.OnClickListener() {
+
+        Button vizualizar = rootView.findViewById(R.id.btnVizualizar);
+        vizualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ViagemService(activity).Delete(lista.get(position).getId());
-                lista.remove(position);
-                notifyDataSetChanged();
+                MainActivity.viagem = new ViagemService(activity).Find(lista.get(position).getId());
+
+                activity.startActivity(new Intent(activity, ViagemActivity.class));
             }
         });
 

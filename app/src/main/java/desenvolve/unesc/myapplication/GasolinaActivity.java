@@ -23,6 +23,7 @@ public class GasolinaActivity extends AppCompatActivity {
     private EditText totalVeiculos;
     private TextView total;
     private Button next;
+    private Button skip;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class GasolinaActivity extends AppCompatActivity {
         total = findViewById(R.id.total);
 
         next = findViewById(R.id.adc);
+        skip = findViewById(R.id.skip);
 
 
         Gasolina gasolina = new Gasolina();
@@ -120,6 +122,13 @@ public class GasolinaActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(GasolinaActivity.this, "Todos os valores são obrigatorios!", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+        skip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.viagem.setGasolina(new Gasolina());
+                startActivity(new Intent(GasolinaActivity.this, TarifaAereaActivity.class));
             }
         });
     }

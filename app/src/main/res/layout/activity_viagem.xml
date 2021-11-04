@@ -10,60 +10,57 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/destino"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="Refeições"
             android:textAlignment="center"
             android:textColor="#0047FB"
             android:textSize="50sp"/>
 
-        <EditText
-            android:id="@+id/custoRefeicao"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="Custo estimado por refeição"
-            android:inputType="number"
-            android:padding="10dp" />
-        <EditText
-            android:id="@+id/refeicoesDia"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:hint="Refeições por dia"
-            android:inputType="number"
-            android:padding="10dp" />
-
         <TextView
-            android:id="@+id/total"
+            android:id="@+id/totalPessoas"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="Total:"
+            android:text="Total de pessoas:"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/duracao"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Duração:"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/custo"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Custo total:"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/custoPessoa"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Custo por pessoa:"
             android:textAlignment="textStart"
             android:textColor="#000000"
             android:textSize="20sp"/>
 
         <Button
-            android:id="@+id/adc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="#0047FB"
-            android:text="ADICIONAR A VIAGEM?" />
-
-        <Button
-            android:id="@+id/skip"
+            android:id="@+id/apagar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#B8002B"
-            android:text="PULAR" />
-
-        <TextView
-            android:id="@+id/alert"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:textAlignment="center"
-            android:textColor="#ED0101"
-            android:textSize="20sp"/>
+            android:text="APAGAR" />
 
     </LinearLayout>
+
 </ScrollView>

@@ -1,5 +1,8 @@
 package desenvolve.unesc.myapplication.database.entidades;
 
+import java.util.Objects;
+import java.util.Optional;
+
 public class Viagem {
 
     public static final String
@@ -8,6 +11,8 @@ public class Viagem {
     public static final String
             ID = "_id",
             DESTINO = "destino",
+            QUANTIDADE_PESSOAS = "quantidade_pessoas",
+            DURACAO = "duracao",
             GASOLINA = "gasolina",
             TARIFA_AEREA = "tarifa",
             REFEICAO = "refeicao",
@@ -21,6 +26,8 @@ public class Viagem {
                     +"("
                     +   ID + " integer primary key autoincrement, "
                     +   DESTINO + " text not null, "
+                    +   QUANTIDADE_PESSOAS + " integer, "
+                    +   DURACAO + " integer, "
                     +   GASOLINA + " integer, "
                     +   TARIFA_AEREA + " integer, "
                     +   REFEICAO + " integer, "
@@ -48,6 +55,10 @@ public class Viagem {
     private Entreterimento entreterimento;
 
     private Usuario usuario;
+
+    private Long quantidadePessoas;
+
+    private Long duracao;
 
     public Long getId() {
         return id;
@@ -113,11 +124,45 @@ public class Viagem {
         this.usuario = usuario;
     }
 
+    public Long getQuantidadePessoas() {
+        return quantidadePessoas;
+    }
+
+    public void setQuantidadePessoas(Long quantidadePessoas) {
+        this.quantidadePessoas = quantidadePessoas;
+    }
+
+    public Long getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Long duracao) {
+        this.duracao = duracao;
+    }
+
     public Long getTotal(){
-        return gasolina.getTotal() +
-                tarifaAerea.getTotal() +
-                (refeicao.getTotal() * hospedagem.getTotalNoites()) +
-                hospedagem.getTotal() +
-                entreterimento.getTotal();
+
+        Long gas = Long.valueOf(0);
+        Long tarifa= Long.valueOf(0);
+        Long ref= Long.valueOf(0);
+        Long hos= Long.valueOf(0);
+        Long en= Long.valueOf(0);
+
+        if(Objects.nonNull(gasolina)){
+            gas = gasolina.getTotal();
+        }
+        if(Objects.nonNull(tarifaAerea)){
+            tarifa = tarifaAerea.getTotal(quantidadePessoas);
+        }
+        if(Objects.nonNull(refeicao)){
+            ref = refeicao.getTotal(this);
+        }
+        if(Objects.nonNull(hospedagem)){
+            hos =hospedagem.getTotal();
+        }
+        if(Objects.nonNull(entreterimento)){
+            en = entreterimento.getTotal(quantidadePessoas);
+        }
+        return gas + tarifa + ref +hos + en;
     }
 }

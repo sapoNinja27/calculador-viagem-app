@@ -52,7 +52,7 @@ public class TarifaAerea {
         this.aluguelVeiculo = aluguelVeiculo;
     }
 
-    public Long getTotal() {
-        return custoEstimadoPessoa + aluguelVeiculo;
+    public Long getTotal(Long quantidadePessoas) {
+        return (custoEstimadoPessoa * quantidadePessoas) + aluguelVeiculo;
     }
 }
